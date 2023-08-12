@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js' %}">
+
+    <title>Title</title>
+
+<style>
+  .container{
+    width: 100%;
+    height: 900px;
+    background-color:lightblue;
+    margin-top: 60px;
+
+  }
+.container1{
+background-color:pink;
+width:50%;
+margin-top:50px;
+height:900px;
+}
+.container{
+width:50%;
+}
+body{
+background-image:url('template/store3.jpg');
+}
+</style>
+</head>
+<body>
+
+<!--<div class="container1">-->
+<!--    <div class="row">-->
+<!--<p>welcome</p>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="container">
+   <div class="row">
+       <img src="../template/store3.jpg">
+     {% if user.is_authenticated %}
+
+
+                   <h1 style="color:black;text-align:center;">Welcome {{user.username}}</h1>
+
+                   <a class="btn btn-success" href="/logout">Logout</a>
+     <div class="container">
+            <div class="row">
+               <a class="btn btn-success" href="/apply">Apply Here..</a>
+         </div>
+     </div>
+{% else %}
+ </div>
+    </div>
+ {% endif %}
+
+    </div>
+</div>
+</body>
+</html>
